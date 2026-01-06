@@ -1,218 +1,77 @@
-# 🌾 KisanBazaar - Direct Farmer to Consumer Marketplace
+# KisanBazaar 🌾  
+### Direct Farmer to Consumer Platform
 
-A web-based MVP platform enabling **direct farmer-to-consumer trade** with **MSP transparency** and **government scheme awareness**.
+**Domain:** Open Innovation (AgriTech & Social Impact)
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![Flask](https://img.shields.io/badge/Flask-3.0-green.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-
----
-
-## 🎯 Problem Statement
-
-Indian farmers often face:
-- **Middlemen exploitation** reducing their profits
-- **Lack of MSP awareness** leading to unfair pricing
-- **Limited market access** to sell directly to consumers
-- **Unawareness of government schemes** and benefits
-
-## 💡 Solution
-
-**KisanBazaar** provides:
-- ✅ Direct farmer-to-consumer marketplace
-- ✅ Real-time MSP comparison for every crop
-- ✅ Government schemes information
-- ✅ Transparent and fair pricing
+KisanBazaar is a web-based platform developed during a hackathon to connect farmers directly with consumers, reducing dependency on middlemen and ensuring fair and transparent agricultural trade.
 
 ---
 
-## 🏗️ System Architecture
-
-```
-Browser (Frontend)
-   ↓ HTTP Requests
-Flask Server (Backend Logic)
-   ↓ SQL Queries
-SQLite Database
-```
+## 🧩 Problem Statement
+Indian farmers often rely on middlemen due to the lack of direct digital access to consumers. This results in lower earnings for farmers and higher prices for consumers. Additionally, limited awareness of Minimum Support Price (MSP) and government agricultural schemes affects farmers’ income security and decision-making.
 
 ---
 
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.9 or higher
-- pip (Python package manager)
-
-### Installation
-
-1. **Clone/Navigate to the project**
-```bash
-cd rsr
-```
-
-2. **Create virtual environment** (recommended)
-```bash
-python -m venv venv
-venv\Scripts\activate  # Windows
-# source venv/bin/activate  # Linux/Mac
-```
-
-3. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-4. **Run the application**
-```bash
-python app.py
-```
-
-5. **Open in browser**
-```
-http://localhost:5000
-```
+## 💡 Proposed Solution
+KisanBazaar acts as a digital bridge between farmers and consumers. Farmers can list their produce, while consumers can browse available crops, compare prices with MSP, and place orders transparently. The platform also provides information about government agricultural schemes to improve awareness and trust.
 
 ---
 
-## 📄 Pages & Features
-
-| Page | Route | Description |
-|------|-------|-------------|
-| Home | `/` | Landing page with platform overview |
-| Farmer Login | `/farmer/login` | Farmer authentication |
-| Farmer Register | `/farmer/register` | New farmer registration |
-| Farmer Dashboard | `/farmer/dashboard` | Add crops, view listings, MSP comparison |
-| Marketplace | `/marketplace` | Browse all available crops |
-| Order | `/order/<crop_id>` | Place demo orders |
-| MSP Rates | `/msp` | View all MSP rates |
-| Govt Schemes | `/schemes` | Government schemes information |
+## ✨ Key Features (MVP)
+- Farmer login and crop listing  
+- Consumer marketplace with order demo  
+- MSP price comparison for selected crops  
+- Government agricultural schemes information  
 
 ---
 
-## 👥 User Roles
+## 🛠️ Technology Stack
 
-### 👨‍🌾 Farmer
-- Register/Login to account
-- List crops with price and quantity
-- See instant MSP comparison
-- Track orders received
+### Backend
+- **Flask (3.0+)** – Python web framework  
+- **SQLite** – Lightweight database for farmers, customers, crops, and orders  
+- **Python 3.13** – Programming language  
 
-### 🛒 Consumer
-- Browse marketplace (no login required)
-- Filter by crop, location
-- View MSP status for transparency
-- Place demo orders
+### Frontend
+- **HTML, CSS, JavaScript** – Core web technologies  
+- **Bootstrap 5** – Responsive UI framework  
+- **Jinja2** – Template engine for dynamic pages  
 
 ---
 
-## 🔑 Demo Credentials
-
-**Farmer Login:**
-- Name: `Rajesh Kumar`
-- Password: `farmer123`
+## 📈 Impact
+KisanBazaar helps improve farmer income by reducing dependency on middlemen, promotes transparent pricing through MSP comparison, and empowers farmers with access to government scheme information. The solution is designed as a simple and scalable MVP with scope for future enhancements.
 
 ---
 
-## 📊 Database Schema
+## 🤖 AI Assistance Used
+AI tools were used responsibly to accelerate development and improve code quality during the hackathon.
 
-### Tables
-1. **farmers** - Farmer accounts
-2. **crops** - Crop listings
-3. **orders** - Order records
-4. **msp** - MSP rates
-5. **schemes** - Government schemes
+| Tool | Purpose |
+|-----|--------|
+| **Claude Opus 4.5** | Assisted in ideation, system design, code structuring, debugging, and test creation |
+| **GitHub Copilot** | Code completion and productivity support within VS Code |
 
----
+### How AI Helped
+- Designed the database schema  
+- Assisted in writing Flask routes and backend logic  
+- Generated HTML templates using Bootstrap  
+- Helped debug SQL queries and logic issues  
+- Assisted in adjusting MSP data to realistic values  
+- Supported writing and validating unit tests  
 
-## 🌟 Core Feature: MSP Comparison Engine
-
-```python
-if farmer_price >= msp_price:
-    status = "Above MSP"  # ✅ Fair Price
-else:
-    status = "Below MSP"  # ⚠️ Warning
-```
-
-This comparison is shown:
-- When farmer adds a crop
-- On farmer dashboard
-- In consumer marketplace
+> *AI tools were used as development assistants to enhance productivity and clarity, while core implementation and decisions were made by the team.*
 
 ---
 
-## 🏛️ Government Schemes Included
-
-- PM-KISAN
-- PMFBY (Crop Insurance)
-- Soil Health Card
-- Kisan Credit Card
-- e-NAM
-- PM Krishi Sinchai Yojana
+## 🚀 Future Scope
+- Online payment integration  
+- Logistics and delivery support  
+- Local language support  
+- Mobile application version  
+- Farmer verification and ratings  
 
 ---
 
-## 📁 Project Structure
-
-```
-rsr/
-├── app.py                 # Main Flask application
-├── requirements.txt       # Python dependencies
-├── README.md             # This file
-├── kisanbazaar.db        # SQLite database (auto-created)
-├── static/
-│   └── css/
-│       └── style.css     # Custom styles
-└── templates/
-    ├── base.html             # Base template
-    ├── home.html             # Home page
-    ├── farmer_login.html     # Farmer login
-    ├── farmer_register.html  # Farmer registration
-    ├── farmer_dashboard.html # Farmer dashboard
-    ├── marketplace.html      # Consumer marketplace
-    ├── order.html            # Order page
-    ├── order_success.html    # Order confirmation
-    ├── schemes.html          # Government schemes
-    └── msp_info.html         # MSP rates
-```
-
----
-
-## 🔮 Future Enhancements
-
-- [ ] Payment gateway integration (UPI)
-- [ ] Mobile app version
-- [ ] AI-based price prediction
-- [ ] Multi-language support
-- [ ] Real-time order tracking
-- [ ] SMS/WhatsApp notifications
-- [ ] Government API integration for live MSP
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| Frontend | HTML, CSS, Bootstrap 5, Jinja2 |
-| Backend | Python, Flask |
-| Database | SQLite |
-| Icons | Bootstrap Icons |
-
----
-
-## 📝 License
-
-MIT License - Feel free to use for hackathons and learning!
-
----
-
-## 🙏 Acknowledgments
-
-- Government of India MSP data
-- Bootstrap for UI components
-- Flask community
-
----
-
-**Made with ❤️ for Indian Farmers**
+## 👨‍👩‍👧‍👦 Team
+Developed as a hackathon MVP by a student team passionate about solving real-world agricultural challenges.
